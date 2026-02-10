@@ -1,0 +1,83 @@
+=== Broad Search for Exams ===
+--- Page Categories ---
+[
+  {
+    "_count": {
+      "id": 1
+    },
+    "category": "Article"
+  },
+  {
+    "_count": {
+      "id": 1
+    },
+    "category": "Board"
+  },
+  {
+    "_count": {
+      "id": 1
+    },
+    "category": "Careers"
+  },
+  {
+    "_count": {
+      "id": 2
+    },
+    "category": "College"
+  },
+  {
+    "_count": {
+      "id": 2
+    },
+    "category": "Course"
+  },
+  {
+    "_count": {
+      "id": 1
+    },
+    "category": "Exams"
+  },
+  {
+    "_count": {
+      "id": 1
+    },
+    "category": "News"
+  },
+  {
+    "_count": {
+      "id": 1
+    },
+    "category": "Olympiad"
+  },
+  {
+    "_count": {
+      "id": 1
+    },
+    "category": "Scholarship"
+  }
+]
+
+--- Simulate Frontend Query Results (3 items) ---
+[
+  {
+    "id": "cmkmg9nc900057k5sg84x5vly",
+    "title": "IGCSE Board 2026",
+    "category": "Board",
+    "branch": ""
+  },
+  {
+    "id": "cmkmgytsj00067kas3hlrux1o",
+    "title": "JEE Main: JoSAA Schedule (Out), Registration (Started), Choice Filling",
+    "category": "Exams",
+    "branch": "Agriculture"
+  },
+  {
+    "id": "cmkmh9mnx000b7kasv2taifis",
+    "title": "nternational Olympiad of Maths [IOM] 2026",
+    "category": "Olympiad",
+    "branch": null
+  }
+]
+
+--- Articles with 'exam' in Title/Category ---
+[]

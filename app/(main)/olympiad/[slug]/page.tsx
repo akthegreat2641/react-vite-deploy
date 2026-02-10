@@ -1,0 +1,123 @@
+import { notFound } from "next/navigation"
+import { prisma } from "@/lib/prisma"
+import { CollegeHeader } from "@/components/college-header"
+import { AuthorBar } from "@/iit-madras-website/components/author-bar"
+import { CollegePageClient } from "@/components/college-page-client"
+import { Metadata } from "next"
+
+// Force dynamic rendering
+export const dynamic = "force-dynamic"
+
+interface Props {
+    params: Promise<{
+        slug: string
+    }>
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { slug } = await params
+    const decodedSlug = decodeURIComponent(slug)
+
+    const page = await prisma.page.findFirst({
+        where: {
+            slug: decodedSlug,
+            OR: [
+                { category: "Olympiad" },
+                { category: "Olympiads" }
+            ]
+        }
+    })
+
+    if (page) {
+        return {
+            title: page.seoMetaTitle || page.title,
+            description: page.metaDescription || page.description || page.title,
+        }
+    }
+
+    return {
+        title: "Olympiad Details",
+        description: "Olympiad details and information"
+    }
+}
+
+export default async function OlympiadPage({ params }: Props) {
+    const { slug } = await params
+    const decodedSlug = decodeURIComponent(slug)
+
+    const page = await prisma.page.findFirst({
+        where: {
+            slug: decodedSlug,
+            OR: [
+                { category: "Olympiad" },
+                { category: "Olympiads" }
+            ]
+        },
+        include: {
+            sections: { orderBy: { order: "asc" } },
+            faqs: { orderBy: { order: "asc" } },
+            author: true
+        }
+    })
+
+    if (!page) {
+        notFound()
+    }
+
+    // Prepare Data for View
+    const displayData = {
+        name: page.headerTitle || page.title,
+        location: page.locationLabel || "India",
+        logo: page.headerLogo,
+        bgImage: page.headerBgImage,
+        author: page.author,
+        updatedAt: page.updatedAt,
+        sections: page.sections,
+        faqs: page.faqs
+    }
+
+    // Mock Objects
+    const collegeMock = {
+        name: displayData.name,
+        location: displayData.location
+    }
+
+    const pageMock = {
+        headerLogo: displayData.logo,
+        headerBgImage: displayData.bgImage,
+        location: displayData.location
+    }
+
+    return (
+        <div className="min-h-screen bg-[#f5f5f5]">
+            <CollegeHeader
+                college={collegeMock}
+                page={pageMock}
+                // isOlympiad={true} // If Header needs it, though currently it seems generic or checks specific flags. 
+                // Using generic props based on page data:
+                showHeaderLogo={page.showHeaderLogo}
+                courseDuration={page.courseDuration}
+                avgFees={page.avgFees}
+            />
+
+            <AuthorBar
+                author={displayData.author}
+                date={displayData.updatedAt}
+                btn1Text={page.headerBtn1Text}
+                btn1Link={page.headerBtn1Link}
+                btn2Text={page.headerBtn2Text}
+                btn2Link={page.headerBtn2Link}
+                showBtn1={page.showBtn1}
+                showBtn2={page.showBtn2}
+            />
+
+            <CollegePageClient
+                college={collegeMock}
+                slug={slug}
+                sections={displayData.sections}
+                faqs={displayData.faqs}
+                category={page.category || "Olympiad"}
+            />
+        </div>
+    )
+}

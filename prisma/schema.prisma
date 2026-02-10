@@ -1,0 +1,441 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String   @id @default(cuid())
+  email         String   @unique
+  mobile        String?  @unique
+  password      String
+  name          String?
+  stream        String?
+  level         String?
+  role          String   @default("user")
+  isBlocked     Boolean  @default(false)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model College {
+  id        String      @id @default(cuid())
+  name      String
+  location  String
+  image     String?
+  logo      String?
+  featured  Boolean     @default(false)
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+
+  // Detailed page configuration (header, content sections, FAQs)
+  page      CollegePage?
+}
+
+model Course {
+  id        String   @id @default(cuid())
+  name      String
+  category  String
+  featured  Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Board {
+  id        String   @id @default(cuid())
+  name      String
+  category  String
+  featured  Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Article {
+  id                    String   @id @default(cuid())
+  title                 String
+  category              String
+  content               String?
+  image                 String?
+  colleges              Int      @default(0)
+  featured              Boolean  @default(false)
+  popular               Boolean  @default(false)
+  // New fields from image
+  postType              String?  // Article, News, etc.
+  examCategory          String?
+  genericGroup          Boolean  @default(false)
+  exam                  String?
+  secondary             String?
+  subjects              String?  // JSON array
+  postAs                String   @default("Me") // Me, Exam Admin, Bot, Normal User
+  userEmail             String?
+  location              String?
+  
+  // Header Buttons
+  cutOffButtonText      String?
+  cutOffButtonLink      String?
+  predictButtonText     String?
+  predictButtonLink     String?
+
+  specifyPostDate       Boolean  @default(false)
+  postDate              DateTime?
+  noIndex               Boolean  @default(false)
+  sendToSEO             Boolean  @default(false)
+  isNews                Boolean  @default(false)
+  excerpt               String?
+  faqTitle              String?
+  metaDescription       String?
+  featuredContentType    String?  // Image or Video
+  featuredImage         String?
+  featuredVideo         String?
+  caption               String?
+  linkReplacement       String?
+  introductoryText      String?  // Rich text
+  seoMetaTitle          String?
+  slug                  String?
+  canonical             String?
+  redirect              String?
+  keywords              String?
+  subscriptionBox       Boolean  @default(false)
+  subscriptionBoxDetails String?
+  published             Boolean  @default(false)
+  
+  authorId              String?
+  author                Author?  @relation(fields: [authorId], references: [id])
+  
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+  
+  // Content Sections
+  sections              ArticleSection[]
+}
+
+model ArticleSection {
+  id        String   @id @default(cuid())
+  articleId String
+  article   Article  @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  title     String
+  content   String
+  order     Int      @default(0)
+}
+
+model Scholarship {
+  id        String   @id @default(cuid())
+  name      String
+  featured  Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model News {
+  id        String   @id @default(cuid())
+  title     String
+  content   String?
+  author    String
+  image     String?
+  featured  Boolean  @default(false)
+  published Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Exam {
+  id        String   @id @default(cuid())
+  name      String
+  category  String?
+  image     String?
+  featured  Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Testimonial {
+  id        String   @id @default(cuid())
+  name      String
+  content   String
+  image     String?
+  rating    Int      @default(5)
+  featured  Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Stat {
+  id        String   @id @default(cuid())
+  label     String
+  value     String
+  icon      String?
+  featured  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model City {
+  id        String   @id @default(cuid())
+  name      String
+  image     String?
+  featured  Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// College detailed page (header info, brochure, content sections, FAQs)
+model CollegePage {
+  id             String   @id @default(cuid())
+  collegeId      String   @unique
+  college        College  @relation(fields: [collegeId], references: [id], onDelete: Cascade)
+
+  // Slug used in frontend URLs, e.g. "iit-madras"
+  slug           String   @unique
+
+  // Header section
+  headerLogo     String?  // College logo image URL
+  headerBgImage  String?  // Header background image / watermark
+  brochureUrl    String?  // Link used for brochure button
+  publishedAt    DateTime?
+
+  // If not explicitly set, frontend can fall back to college.location / updatedAt
+  location       String?
+
+  // Content body is stored as structured sections and FAQs
+  // Content body is stored as structured sections and FAQs
+  sections       CollegePageSection[]
+  faqs           CollegeFaq[]
+
+  authorId       String?
+  author         Author?  @relation(fields: [authorId], references: [id])
+
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+// Repeated content sections (title + rich HTML content)
+model CollegePageSection {
+  id            String      @id @default(cuid())
+  collegePageId String
+  collegePage   CollegePage @relation(fields: [collegePageId], references: [id], onDelete: Cascade)
+
+  title         String
+  content       String      // HTML from editor
+  order         Int         @default(0)
+  type          SectionType @default(INFO)
+}
+
+enum SectionType {
+  INFO
+  CUTOFF
+  COURSES
+  ADMISSION
+  REVIEWS
+  PLACEMENTS
+  RESULT
+  INFRASTRUCTURE
+  GALLERY
+  SCHOLARSHIP
+  RANKING
+}
+
+// FAQs for a college page
+model CollegeFaq {
+  id            String      @id @default(cuid())
+  collegePageId String
+  collegePage   CollegePage @relation(fields: [collegePageId], references: [id], onDelete: Cascade)
+
+  title         String      // Section title or short label
+  question      String
+  answer        String      // HTML from editor or plain text
+  order         Int         @default(0)
+}
+
+
+// General static pages (About Us, Privacy Policy, etc.)
+model Page {
+  id             String   @id @default(cuid())
+  title          String
+  slug           String   @unique
+  
+  
+  // Header section
+  headerTitle    String?  // Custom title for the header section
+  headerLogo     String?
+  headerBgImage  String?
+  publishDate    DateTime?
+  description    String?  // Short description or subtitle
+  locationLabel  String?
+  
+  // Exam specific date fields (display strings)
+  applicationDate String?
+  examDate        String?
+  resultDate      String?
+  
+  // New Exam Dropdowns
+  examLevel       String? // National, State
+  examMode        String? // Online, Offline
+
+  
+  // Header Buttons
+  headerBtn1Text String?
+  headerBtn1Link String?
+  headerBtn2Text String?
+  headerBtn2Link String?
+  showBtn1       Boolean  @default(true)
+  showBtn2       Boolean  @default(true)
+  showHeaderLogo Boolean @default(true)
+
+  category       String? // Articles, Boards, Courses, Exam, Olampiad
+  
+  // Course specific fields
+  courseDuration String?
+  avgFees        String?
+  branch         String? // e.g. Engineering, Medical, etc.
+  level          String? // National Boards, State Boards
+  boardType      String? // IGCSE, IB
+  program        String? // Undergraduate Scholarships, Postgraduate Scholarships
+  careerType     String? // Law, Management
+  state          String? // Indian State for Colleges
+  degree         String? // Linked Degrees/Courses
+  programType    String? // Full Time, Part Time, etc.
+  collegeType    String? // Private, Government
+  courseType     String? // Degree, Diploma, Certification
+  instituteType  String? // IIT, NIT, IIM, etc.
+  examAccepted   String? // Linked Exams (JEE, NEET, etc.)
+  genderAccepted String? // Co-ed, Girls
+  totalFees      String? // 0-25k, 25-50k, etc.
+  cdRank         Int?    // Custom Rank
+  placementAverage Int?  // Average Package
+
+  placementHighest Int?  // Highest Package
+  totalFeesVal     Int?  // Numeric value for sorting fees
+
+  
+  // Content body
+  sections       PageSection[]
+  faqs           PageFaq[]
+  
+  published      Boolean  @default(false)
+  featured       Boolean  @default(false)
+  popular        Boolean  @default(false)
+  cardImage      String?
+  seoMetaTitle   String?
+  metaDescription String?
+  
+  authorId       String?
+  author         Author?  @relation(fields: [authorId], references: [id])
+  
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+// Sections for generic pages
+model PageSection {
+  id            String      @id @default(cuid())
+  pageId        String
+  page          Page        @relation(fields: [pageId], references: [id], onDelete: Cascade)
+
+  title         String
+  content       String      // HTML from editor
+  order         Int         @default(0)
+  type          String      @default("INFO") // INFO, GALLERY, etc.
+}
+
+// FAQs for generic pages
+model PageFaq {
+  id            String      @id @default(cuid())
+  pageId        String
+  page          Page        @relation(fields: [pageId], references: [id], onDelete: Cascade)
+
+  title         String      // Section title
+  question      String
+  answer        String
+  order         Int         @default(0)
+}
+
+model Category {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  icon      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Author {
+  id          String   @id @default(cuid())
+  name        String
+  image       String?
+  description String?
+  designation String?
+  facebook    String?
+  twitter     String?
+  linkedin    String?
+  instagram   String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  articles     Article[]
+  pages        Page[]
+  collegePages CollegePage[]
+}
+
+model CareerType {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  image     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model SitemapUrl {
+  id           String   @id @default(cuid())
+  url          String   @unique
+  lastModified DateTime?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model FooterConfig {
+  id              String   @id @default("footer")
+  logoUrl         String?
+  aboutText       String?
+  phone           String?
+  email           String?
+  address         String?
+  
+  // Social Links
+  facebook        String?
+  twitter         String?
+  linkedin        String?
+  instagram       String?
+  youtube         String?
+
+  // Links Sections (stored as JSON strings)
+  section1Title   String?  @default("Quick Links")
+  section1Links   String?  
+
+  section2Title   String?  @default("Explore")
+  section2Links   String?  
+
+  section3Title   String?  @default("Support")
+  section3Links   String?  
+
+  copyrightText   String?  @default("© 2025 CollegewebCU. All Rights Reserved.")
+
+  privacyPolicy   String?  
+  termsConditions String?
+
+  updatedAt       DateTime @updatedAt
+}
+
+model AdConfig {
+  id              String   @id @default("ads")
+  autoAds         String?  // Script for auto ads (e.g., in layout head)
+  sidebarAd       String?  // Code for sidebar ad unit
+  bannerAd        String?  // Code for top/bottom banner ad unit
+  isEnabled       Boolean  @default(true)
+  updatedAt       DateTime @updatedAt
+}
+

@@ -1,0 +1,21 @@
+{
+  "exactExam": [],
+  "exactExams": [
+    {
+      "id": "cmkmgytsj00067kas3hlrux1o",
+      "title": "JEE Main: JoSAA Schedule (Out), Registration (Started), Choice Filling",
+      "category": "Exams",
+      "published": true,
+      "branch": "Agriculture"
+    }
+  ],
+  "looseMatch": [
+    {
+      "id": "cmkmgytsj00067kas3hlrux1o",
+      "title": "JEE Main: JoSAA Schedule (Out), Registration (Started), Choice Filling",
+      "category": "Exams",
+      "published": true,
+      "branch": "Agriculture"
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+
+> my-v0-project@0.1.0 build
+> next build
+
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+   ▲ Next.js 16.0.3 (Turbopack)
+   - Environments: .env
+
+ ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+   Creating an optimized production build ...
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+ ✓ Compiled successfully in 4.1s
+   Skipping validation of types
+   Collecting page data using 11 workers ...
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+   Generating static pages using 11 workers (0/47) ...
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+   Generating static pages using 11 workers (11/47) 
+Footer fetch error: Error [PrismaClientKnownRequestError]: 
+Invalid `prisma.footerConfig.findFirst()` invocation:
+
+
+The column `main.FooterConfig.privacyPolicy` does not exist in the current database.
+    at async v (E:\app dev\collegewebcu\new\collegereferralwebsite\.next\server\chunks\ssr\_93f3a2a7._.js:1:54689) {
+  code: 'P2022',
+  meta: [Object],
+  clientVersion: '6.19.0'
+}
+Footer fetch error: Error [PrismaClientKnownRequestError]: 
+Invalid `prisma.footerConfig.findFirst()` invocation:
+
+
+The column `main.FooterConfig.privacyPolicy` does not exist in the current database.
+    at async v (E:\app dev\collegewebcu\new\collegereferralwebsite\.next\server\chunks\ssr\_93f3a2a7._.js:1:54689) {
+  code: 'P2022',
+  meta: [Object],
+  clientVersion: '6.19.0'
+}
+Footer fetch error: Error [PrismaClientKnownRequestError]: 
+Invalid `prisma.footerConfig.findFirst()` invocation:
+
+
+The column `main.FooterConfig.privacyPolicy` does not exist in the current database.
+    at async v (E:\app dev\collegewebcu\new\collegereferralwebsite\.next\server\chunks\ssr\_93f3a2a7._.js:1:54689) {
+  code: 'P2022',
+  meta: [Object],
+  clientVersion: '6.19.0'
+}
+Footer fetch error: Error [PrismaClientKnownRequestError]: 
+Invalid `prisma.footerConfig.findFirst()` invocation:
+
+
+The column `main.FooterConfig.privacyPolicy` does not exist in the current database.
+    at async v (E:\app dev\collegewebcu\new\collegereferralwebsite\.next\server\chunks\ssr\_93f3a2a7._.js:1:54689) {
+  code: 'P2022',
+  meta: [Object],
+  clientVersion: '6.19.0'
+}
+Footer fetch error: Error [PrismaClientKnownRequestError]: 
+Invalid `prisma.footerConfig.findFirst()` invocation:
+
+
+The column `main.FooterConfig.privacyPolicy` does not exist in the current database.
+    at async p (E:\app dev\collegewebcu\new\collegereferralwebsite\.next\server\chunks\ssr\[root-of-the-server]__a06ed83b._.js:1:17975) {
+  code: 'P2022',
+  meta: [Object],
+  clientVersion: '6.19.0'
+}
+   Generating static pages using 11 workers (23/47) 
+Footer fetch error: Error [PrismaClientKnownRequestError]: 
+Invalid `prisma.footerConfig.findFirst()` invocation:
+
+
+The column `main.FooterConfig.privacyPolicy` does not exist in the current database.
+    at async v (E:\app dev\collegewebcu\new\collegereferralwebsite\.next\server\chunks\ssr\_93f3a2a7._.js:1:54689) {
+  code: 'P2022',
+  meta: [Object],
+  clientVersion: '6.19.0'
+}
+Footer fetch error: Error [PrismaClientKnownRequestError]: 
+Invalid `prisma.footerConfig.findFirst()` invocation:
+
+
+The column `main.FooterConfig.privacyPolicy` does not exist in the current database.
+    at async v (E:\app dev\collegewebcu\new\collegereferralwebsite\.next\server\chunks\ssr\_93f3a2a7._.js:1:54689) {
+  code: 'P2022',
+  meta: [Object],
+  clientVersion: '6.19.0'
+}
+Footer fetch error: Error [PrismaClientKnownRequestError]: 
+Invalid `prisma.footerConfig.findFirst()` invocation:
+
+
+The column `main.FooterConfig.privacyPolicy` does not exist in the current database.
+    at async v (E:\app dev\collegewebcu\new\collegereferralwebsite\.next\server\chunks\ssr\_93f3a2a7._.js:1:54689) {
+  code: 'P2022',
+  meta: [Object],
+  clientVersion: '6.19.0'
+}
+Privacy Policy fetch error: Error [PrismaClientKnownRequestError]: 
+Invalid `prisma.footerConfig.findFirst()` invocation:
+
+
+The column `main.FooterConfig.privacyPolicy` does not exist in the current database.
+    at async e (E:\app dev\collegewebcu\new\collegereferralwebsite\.next\server\chunks\ssr\[root-of-the-server]__0bc9307b._.js:1:1298) {
+  code: 'P2022',
+  meta: [Object],
+  clientVersion: '6.19.0'
+}
+Footer fetch error: Error [PrismaClientKnownRequestError]: 
+Invalid `prisma.footerConfig.findFirst()` invocation:
+
+
+The column `main.FooterConfig.privacyPolicy` does not exist in the current database.
+    at async v (E:\app dev\collegewebcu\new\collegereferralwebsite\.next\server\chunks\ssr\_93f3a2a7._.js:1:54689) {
+  code: 'P2022',
+  meta: [Object],
+  clientVersion: '6.19.0'
+}
+Footer fetch error: Error [PrismaClientKnownRequestError]: 
+Invalid `prisma.footerConfig.findFirst()` invocation:
+
+
+The column `main.FooterConfig.privacyPolicy` does not exist in the current database.
+    at async v (E:\app dev\collegewebcu\new\collegereferralwebsite\.next\server\chunks\ssr\_93f3a2a7._.js:1:54689) {
+  code: 'P2022',
+  meta: [Object],
+  clientVersion: '6.19.0'
+}
+Terms & Conditions fetch error: Error [PrismaClientKnownRequestError]: 
+Invalid `prisma.footerConfig.findFirst()` invocation:
+
+
+The column `main.FooterConfig.privacyPolicy` does not exist in the current database.
+    at async e (E:\app dev\collegewebcu\new\collegereferralwebsite\.next\server\chunks\ssr\[root-of-the-server]__a995261f._.js:1:1298) {
+  code: 'P2022',
+  meta: [Object],
+  clientVersion: '6.19.0'
+}
+Footer fetch error: Error [PrismaClientKnownRequestError]: 
+Invalid `prisma.footerConfig.findFirst()` invocation:
+
+
+The column `main.FooterConfig.privacyPolicy` does not exist in the current database.
+    at async v (E:\app dev\collegewebcu\new\collegereferralwebsite\.next\server\chunks\ssr\_93f3a2a7._.js:1:54689) {
+  code: 'P2022',
+  meta: [Object],
+  clientVersion: '6.19.0'
+}
+   Generating static pages using 11 workers (35/47) 
+ ⨯ useSearchParams() should be wrapped in a suspense boundary at page "/admin/pages". Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
+    at S (E:\app dev\collegewebcu\new\collegereferralwebsite\.next\server\chunks\ssr\node_modules_next_cf02c53c._.js:2:2111)
+    at p (E:\app dev\collegewebcu\new\collegereferralwebsite\.next\server\chunks\ssr\node_modules_next_cf02c53c._.js:4:4847)
+    at t (E:\app dev\collegewebcu\new\collegereferralwebsite\.next\server\chunks\ssr\_2235c65a._.js:7:10556)
+    at ar (E:\app dev\collegewebcu\new\collegereferralwebsite\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:84366)
+    at aa (E:\app dev\collegewebcu\new\collegereferralwebsite\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:86185)
+    at as (E:\app dev\collegewebcu\new\collegereferralwebsite\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:107952)
+    at ao (E:\app dev\collegewebcu\new\collegereferralwebsite\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:105374)
+    at an (E:\app dev\collegewebcu\new\collegereferralwebsite\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:84718)
+    at aa (E:\app dev\collegewebcu\new\collegereferralwebsite\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:86234)
+    at aa (E:\app dev\collegewebcu\new\collegereferralwebsite\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:104714)
+Error occurred prerendering page "/admin/pages". Read more: https://nextjs.org/docs/messages/prerender-error
+Export encountered an error on /admin/pages/page: /admin/pages, exiting the build.
+ ⨯ Next.js build worker exited with code: 1 and signal: null

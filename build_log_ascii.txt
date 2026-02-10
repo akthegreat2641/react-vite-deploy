@@ -1,0 +1,44 @@
+
+> my-v0-project@0.1.0 build
+> next build
+
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+   ▲ Next.js 16.0.3 (Turbopack)
+   - Environments: .env
+
+ ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+   Creating an optimized production build ...
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+ ✓ Compiled successfully in 10.2s
+   Skipping validation of types
+   Collecting page data using 11 workers ...
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+   Generating static pages using 11 workers (0/53) ...
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+   Generating static pages using 11 workers (13/53) 
+ ⨯ useSearchParams() should be wrapped in a suspense boundary at page "/admin/pages/new". Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
+    at S (E:\app dev\collegewebcu\new\collegereferralwebsite\.next\server\chunks\ssr\node_modules_next_cf02c53c._.js:2:2111)
+    at p (E:\app dev\collegewebcu\new\collegereferralwebsite\.next\server\chunks\ssr\node_modules_next_cf02c53c._.js:4:4847)
+    at cm (E:\app dev\collegewebcu\new\collegereferralwebsite\.next\server\chunks\ssr\_51d2e192._.js:1:71067)
+    at ar (E:\app dev\collegewebcu\new\collegereferralwebsite\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:84366)
+    at aa (E:\app dev\collegewebcu\new\collegereferralwebsite\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:86185)
+    at as (E:\app dev\collegewebcu\new\collegereferralwebsite\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:107952)
+    at ao (E:\app dev\collegewebcu\new\collegereferralwebsite\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:105374)
+    at an (E:\app dev\collegewebcu\new\collegereferralwebsite\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:84718)
+    at aa (E:\app dev\collegewebcu\new\collegereferralwebsite\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:86234)
+    at as (E:\app dev\collegewebcu\new\collegereferralwebsite\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:107952)
+Error occurred prerendering page "/admin/pages/new". Read more: https://nextjs.org/docs/messages/prerender-error
+Export encountered an error on /admin/pages/new/page: /admin/pages/new, exiting the build.
+ ⨯ Next.js build worker exited with code: 1 and signal: null
